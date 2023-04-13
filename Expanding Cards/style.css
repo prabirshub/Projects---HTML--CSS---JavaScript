@@ -6,10 +6,54 @@
 body {
   font-family: 'Mulish', sans-serif;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+.container {
+  display: flex;
+  width: 90vw;
+}
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 0 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+.panel h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  position: absolute;
+  bottom: 20px;
+  left: 80px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.panel.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s ease-in 0.8s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
 }
